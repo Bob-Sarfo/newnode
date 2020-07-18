@@ -3,6 +3,18 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require("mongoose");
+
+//connecting to db
+mongoose.connect('127.0.0.1:27017/mongo_db',()=>{
+  console.log("successful connection");
+}).then(
+  success=>console.log('no-error' + success),
+  error => {console.log("App starting error : ",error.stack),
+  process.exit(1);
+}
+  
+)
 
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./controllers/users');

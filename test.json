@@ -1,0 +1,44 @@
+insert bulk data
+
+
+(
+    [
+        {name:"Kojo",email:"kk@ress.net",country:"Ghana"},
+        {name:"Nzebe",email:"nze@outlook.com",country:"South Africa"},
+        {name:"Toda",email:"todass@hotmail.com",country:"Nigeria"}
+    ]
+)
+
+use mongo_db [creates the db]
+
+db.users.insert();
+
+finding an item
+(
+{
+    $or: [{name:"kojo"},{country:"Ghana"}]
+}
+)
+
+insert
+(
+ {
+ $or: [ { email: "josh@mongo.com" }, { name: "Mike" } ]
+ }
+)''
+
+
+
+update
+
+(
+    {"name":"Toda"},
+   {$set:{"email":"datstoda@outlook.com"}}
+)
+
+(
+ { "name": "John" },
+ {
+ $set: { "email": "john@mongo.com" }
+ }
+ )
